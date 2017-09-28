@@ -31,20 +31,15 @@
 
 class Ship
   def self.how_many_ships(size)
-    if size == 1
-      4
-    elsif size == 2
-      3
-    elsif size == 3
-      2
-    elsif size == 4
-      1
-    end
+    return 4 if size == 1
+    return 3 if size == 2
+    return 2 if size == 3
+    return 1 if size == 4
   end
 
   def initialize(size)
-    if (1..4).include? size
-      @size = size
+    @size = size while (1..4).include? size
+    
     else
       raise 'Длина корабля должна быть от 1 до 4'
     end
@@ -54,4 +49,6 @@ end
 puts "Можно использовать #{Ship.how_many_ships(1)} 1-палубных"
 puts "Можно использовать #{Ship.how_many_ships(2)} 2-палубных"
 puts "Можно использовать #{Ship.how_many_ships(3)} 3-палубных"
-puts "Можно использовать #{Ship.how_many_ships(4)} 4-палубных"
+puts "Можно использовать #{Ship.how_many_ships(5)} 4-палубных"
+#@size = gets
+#puts 
